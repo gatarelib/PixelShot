@@ -1,11 +1,15 @@
 package muddzdev.pixelshot;
 
+import android.Manifest;
 import android.graphics.Color;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.rule.GrantPermissionRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
 
 import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -17,10 +21,20 @@ import static android.view.View.MeasureSpec.EXACTLY;
 @RunWith(AndroidJUnit4.class)
 public class PixelShotTest {
 
+    @Rule
+    public GrantPermissionRule permissionRule = GrantPermissionRule.grant(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+
+    private View testView;
+
+    @Before
+    public void setup() {
+        testView = generateTestView();
+    }
+
 
     @Test
     public void testCallbackPathNotNull() {
-        PixelShot.of(getTestView()).setResultListener(new PixelShot.PixelShotListener() {
+        PixelShot.of(testView).setResultListener(new PixelShot.PixelShotListener() {
             @Override
             public void onPixelShotSuccess(String path) {
                 Assert.assertNotNull("Test path was null", path);
@@ -36,7 +50,7 @@ public class PixelShotTest {
 
     @Test
     public void testIfSavedInJPG() {
-        PixelShot.of(getTestView()).setResultListener(new PixelShot.PixelShotListener() {
+        PixelShot.of(testView).setResultListener(new PixelShot.PixelShotListener() {
             @Override
             public void onPixelShotSuccess(String path) {
                 Assert.assertTrue("Test for saving in JPG failed", path.contains(".jpg"));
@@ -51,7 +65,7 @@ public class PixelShotTest {
 
     @Test
     public void testIfSavedInPNG() {
-        PixelShot.of(getTestView()).toPNG().setResultListener(new PixelShot.PixelShotListener() {
+        PixelShot.of(testView).toPNG().setResultListener(new PixelShot.PixelShotListener() {
             @Override
             public void onPixelShotSuccess(String path) {
                 Assert.assertTrue("Test for saving in .PNG failed", path.contains(".png"));
@@ -67,7 +81,7 @@ public class PixelShotTest {
 
     @Test
     public void testIfSavedInNomedia() {
-        PixelShot.of(getTestView()).toNomedia().setResultListener(new PixelShot.PixelShotListener() {
+        PixelShot.of(testView).toNomedia().setResultListener(new PixelShot.PixelShotListener() {
             @Override
             public void onPixelShotSuccess(String path) {
                 Assert.assertTrue("Test for saving in .nomedia failed", path.contains(".nomedia"));
@@ -83,7 +97,7 @@ public class PixelShotTest {
 
     @Test
     public void testIfDirectoryExist() {
-        PixelShot.of(getTestView()).setPath("PixelShotTestDirectory").setResultListener(new PixelShot.PixelShotListener() {
+        PixelShot.of(testView).setPath("PixelShotTestDirectory").setResultListener(new PixelShot.PixelShotListener() {
             @Override
             public void onPixelShotSuccess(String path) {
                 File file = new File(path);
@@ -103,7 +117,7 @@ public class PixelShotTest {
 
     @Test
     public void testIfFileExist() {
-        PixelShot.of(getTestView()).setPath("PixelShotTestDirectory").setResultListener(new PixelShot.PixelShotListener() {
+        PixelShot.of(testView).setPath("PixelShotTestDirectory").setResultListener(new PixelShot.PixelShotListener() {
             @Override
             public void onPixelShotSuccess(String path) {
                 File file = new File(path);
@@ -119,7 +133,7 @@ public class PixelShotTest {
         sleepThread();
     }
 
-    private View getTestView() {
+    private View generateTestView() {
         int width = 950;
         int height = 950;
 

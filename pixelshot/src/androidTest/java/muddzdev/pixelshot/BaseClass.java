@@ -14,6 +14,10 @@ import java.util.concurrent.TimeUnit;
 
 import static android.view.View.MeasureSpec.EXACTLY;
 
+/**
+ * Currently not in use.
+ */
+
 public class BaseClass {
 
     static final String FORMAT_JPG = ".jpg";
