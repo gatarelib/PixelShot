@@ -1,1 +1,5 @@
-<manifest package="muddzdev.pixelshot.library" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="muddzdev.pixelshot.library">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+</manifest>

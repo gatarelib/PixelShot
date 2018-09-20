@@ -23,7 +23,6 @@ public class PixelShotTest {
 
     @Rule
     public GrantPermissionRule permissionRule = GrantPermissionRule.grant(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
     private View testView;
 
     @Before
@@ -147,7 +146,6 @@ public class PixelShotTest {
 
         return view;
     }
-
 
     private void sleepThread() {
         try {
