@@ -3,8 +3,9 @@
 [![APK](https://img.shields.io/badge/Download-Demo-brightgreen.svg)](https://github.com/Muddz/PixelShot/raw/master/demo.apk)
 
 
-PixelShot is an awsome Android library that can save any `View` as an image in the formats `JPG/PNG/nomedia`. The library works on a asynchronous task behind the scenes and handles errors of I/O operations and manages memory allocation for you.
+PixelShot is an awesome Android library that can save any `View` or `SurfaceView` as an image in the formats `JPG`,`PNG` and `nomedia`. The library works on a asynchronous task behind the scenes and handles errors of I/O operations and memory handling for you. Note: Saving a `SurfaceView` to an image requires API level >= 24 
 
+_In case of any bugs or improvement ideas then please create a new issue_
 
 ## Example of simplest usage:
 
@@ -29,7 +30,7 @@ Image format will default to `.JPG`
     
 ## Installation
 
-Add the depedency in your `build.gradle`
+Add the dependency in your `build.gradle`
 ```groovy
 dependencies {
     implementation 'com.muddzdev:pixelshot:1.0.0'  
