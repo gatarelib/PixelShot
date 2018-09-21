@@ -6,17 +6,12 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.rule.GrantPermissionRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.view.View;
-
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
 import java.io.File;
-
-import muddz.pixelshotlibrary.PixelShot;
-
 import static android.view.View.MeasureSpec.EXACTLY;
 
 
