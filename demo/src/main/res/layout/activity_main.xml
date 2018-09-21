@@ -19,7 +19,7 @@
         android:background="#f4f3f3"
         app:tabMode="fixed" />
 
-    <muddzdev.pixelshot.NonSwipeViewPager
+    <com.muddzdev.demo.NonSwipeViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

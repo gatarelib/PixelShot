@@ -1,12 +1,12 @@
-package muddzdev.pixelshot;
+package com.muddzdev.demo;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import muddzdev.pixelshot.fragments.SurfaceViewFragment;
-import muddzdev.pixelshot.fragments.TextureViewFragment;
-import muddzdev.pixelshot.fragments.ViewFragment;
+import com.muddzdev.demo.fragments.SurfaceViewFragment;
+import com.muddzdev.demo.fragments.TextureViewFragment;
+import com.muddzdev.demo.fragments.ViewFragment;
 
 /**
  * Created by Muddz on 23-08-2017.

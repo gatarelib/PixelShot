@@ -1,4 +1,4 @@
-package muddzdev.pixelshot;
+package com.muddzdev.pixelshot;
 
 import android.Manifest;
 import android.graphics.Color;
@@ -14,6 +14,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import java.io.File;
+
+import muddz.pixelshotlibrary.PixelShot;
 
 import static android.view.View.MeasureSpec.EXACTLY;
 

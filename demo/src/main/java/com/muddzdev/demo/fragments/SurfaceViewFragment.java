@@ -1,4 +1,4 @@
-package muddzdev.pixelshot.fragments;
+package com.muddzdev.demo.fragments;
 
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -11,7 +11,8 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import muddzdev.pixelshot.R;
+import com.muddzdev.demo.R;
+
 
 /**
  * Created by Muddz on 23-08-2017.

@@ -1,4 +1,4 @@
-package muddzdev.pixelshot.fragments;
+package com.muddzdev.demo.fragments;
 
 import android.graphics.SurfaceTexture;
 import android.hardware.Camera;
@@ -10,10 +10,10 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.muddzdev.demo.R;
+
 import java.io.IOException;
 import java.util.List;
-
-import muddzdev.pixelshot.R;
 
 /**
  * Created by Muddz on 23-08-2017.

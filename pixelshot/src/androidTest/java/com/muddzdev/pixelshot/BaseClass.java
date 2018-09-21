@@ -1,4 +1,4 @@
-package muddzdev.pixelshot;
+package com.muddzdev.pixelshot;
 
 import android.Manifest;
 import android.graphics.Color;

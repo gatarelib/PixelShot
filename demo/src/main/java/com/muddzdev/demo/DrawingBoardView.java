@@ -1,4 +1,4 @@
-package muddzdev.pixelshot;
+package com.muddzdev.demo;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

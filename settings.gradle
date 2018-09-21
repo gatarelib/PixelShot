@@ -1,1 +1,1 @@
-include ':demo', ':pixelshot'
+include ':pixelshot',':demo'

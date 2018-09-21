@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: "com.jfrog.bintray"
 
 android {
     compileSdkVersion 27
@@ -21,19 +22,94 @@ android {
     }
 }
 
-publish {
-    userOrg = 'muddz'
-    groupId = 'com.muddzdev'
-    artifactId = 'pixelshot'
-    publishVersion = '1.0.0'
-    desc = 'PixelShot saves any specific View in your Android app to an image'
-    website = 'https://github.com/Muddz/PixelShot'
-}
-
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support:design:27.1.1'
+    testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+def siteUrl = 'https://github.com/Muddz/PixelShot'
+def gitUrl = 'https://github.com/Muddz/PixelShot.git'
+def developerName = "muddz"
+group = "com.muddzdev"
+version = "1.0.0"
+
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                name 'com.muddzdev:pixelshot'
+                description = 'PixelShot is an awesome Android library that can save any View in your app as an image'
+                url siteUrl
+
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id developerName
+                        name 'Muddi Walid'
+                        email 'muddzdk@gmail.com'
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+tasks.withType(Javadoc).all {
+    enabled = false
+}
+
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+bintray {
+    bintray.user = "muddz"
+    bintray.key = "cd5bf822712334ccc336c04175625b0a46fae25b"
+    configurations = ['archives']
+    pkg {
+        repo = "maven"
+        name = "PixelShot"
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        version {
+            gpg {
+                name = "1.0.0"
+            }
+        }
+    }
 }

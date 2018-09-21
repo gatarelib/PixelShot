@@ -1,4 +1,4 @@
-package muddzdev.pixelshot;
+package com.muddzdev.pixelshot;
 
 import android.graphics.Bitmap;
 import android.os.Build;

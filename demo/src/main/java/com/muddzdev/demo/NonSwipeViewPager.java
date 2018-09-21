@@ -1,4 +1,4 @@
-package muddzdev.pixelshot;
+package com.muddzdev.demo;
 
 import android.content.Context;
 import android.support.annotation.NonNull;

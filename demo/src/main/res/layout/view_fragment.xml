@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <muddzdev.pixelshot.DrawingBoardView
+    <com.muddzdev.demo.DrawingBoardView
         android:id="@+id/drawingview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

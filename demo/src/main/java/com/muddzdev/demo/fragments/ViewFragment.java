@@ -1,4 +1,4 @@
-package muddzdev.pixelshot.fragments;
+package com.muddzdev.demo.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,8 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import muddzdev.pixelshot.DrawingBoardView;
-import muddzdev.pixelshot.R;
+import com.muddzdev.demo.DrawingBoardView;
+import com.muddzdev.demo.R;
+
 
 /**
  * Created by Muddz on 23-08-2017.

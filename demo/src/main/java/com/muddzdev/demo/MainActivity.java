@@ -1,4 +1,4 @@
-package muddzdev.pixelshot;
+package com.muddzdev.demo;
 
 import android.Manifest;
 import android.os.Bundle;
@@ -13,7 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import muddzdev.pixelshot.fragments.BaseFragment;
+import com.muddzdev.demo.fragments.BaseFragment;
+import com.muddzdev.pixelshot.PixelShot;
 
 public class MainActivity extends AppCompatActivity implements PixelShot.PixelShotListener {
 

@@ -1,4 +1,4 @@
-package muddzdev.pixelshot;
+package com.muddzdev.pixelshot;
 
 import android.content.Context;
 import android.graphics.Bitmap;
